@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin-dashboard.html
+Disallow: /certificate-generator.html
+
+Sitemap: https://recyclezone.tech/sitemap.xml

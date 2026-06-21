@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>RecycleZone | Rebuild. Reinvent. Recycle Tech. | Premium IT Services</title>
+    <meta name="description" content="RecycleZone is a premium IT consulting and software development firm offering Website Development, Mobile Apps, Cloud Solutions, UI/UX, and circular tech enterprise software.">
+    <meta name="keywords" content="RecycleZone, IT Company, Software Development, Web Development, Mobile Apps, UI/UX Design, Cloud Solutions, Circular Economy ERP, Sustainability">
+    <meta name="author" content="RecycleZone Team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://recyclezone.tech/">
+    <meta property="og:title" content="RecycleZone | Rebuild. Reinvent. Recycle Tech.">
+    <meta property="og:description" content="Premium software development, web solutions, mobile applications, branding, and IT consulting services with a focus on sustainable tech.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=630&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="RecycleZone | Rebuild. Reinvent. Recycle Tech.">
+    <meta property="twitter:description" content="Premium software development, web solutions, mobile applications, branding, and IT consulting services with a focus on sustainable tech.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=630&q=80">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader-screen">
+        <div class="loader-spinner"></div>
+        <div class="loader-logo d-flex flex-column align-items-center">
+            <img src="logo.svg" alt="RecycleZone Logo" height="80" class="mb-3">
+            <div>Recycle<span class="text-white">Zone</span></div>
+        </div>
+    </div>
+
+    <!-- Canvas for Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container"style="background: transparent;">
+                <a class="navbar-brand text-gold d-flex align-items-center" href="index.html">
+                    <img src="logo.svg" alt="RecycleZone Logo" height="38" class="me-2">
+                    Recycle<span style="color: var(--text-primary);">Zone</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav" >
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#values">Values</a></li>
+                        <li class="nav-item"><a class="nav-link" href="certificate-verification.html">Verification</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode">
+                                <i class="bi bi-moon-stars-fill"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <!-- Floating code elements for tech ambiance -->
+            <div class="floating-code-elements">
+                <div class="float-item html-tag">&lt;html&gt;</div>
+                <div class="float-item css-tag">.recycle-zone { color: #d4af37; }</div>
+                <div class="float-item js-code">const app = initApp();</div>
+                <div class="float-item react-tag">&lt;Component /&gt;</div>
+                <div class="float-item db-tag">SELECT * FROM tech_assets;</div>
+            </div>
+
+            <div class="container hero-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 text-start">
+                        <span class="section-subtitle">Rebuild. Reinvent. Recycle Tech.</span>
+                        <h1 class="hero-title">
+                            Transforming Ideas Into <span class="text-gradient" id="typed-headline">Digital Excellence</span>
+                        </h1>
+                        <p class="hero-description">
+                            RecycleZone provides innovative software development, web solutions, mobile applications, branding, and IT consulting services with a key focus on technical excellence and environmental responsibility.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#services" class="btn btn-gold">Explore Services</a>
+                            <a href="#projects" class="btn btn-outline-gold">View Projects</a>
+                            <a href="#contact" class="btn btn-outline-gold bg-dark bg-opacity-25">Contact Us</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-5 mt-5 mt-lg-0">
+                        <div class="glass-card p-4 text-center border-gold">
+                            <h3 class="mb-4 text-gold">Why RecycleZone?</h3>
+                            <ul class="list-unstyled text-start mb-0">
+                                <li class="mb-3 d-flex align-items-start text-secondary">
+                                    <i class="bi bi-check-circle-fill text-gold me-3 mt-1"></i>
+                                    <span><strong>Carbon Neutral Servers</strong>: We host client services on 100% green servers.</span>
+                                </li>
+                                <li class="mb-3 d-flex align-items-start text-secondary">
+                                    <i class="bi bi-check-circle-fill text-gold me-3 mt-1"></i>
+                                    <span><strong>Recycled Tech Hardware</strong>: 90% of development hardware is recycled & repurposed.</span>
+                                </li>
+                                <li class="d-flex align-items-start text-secondary">
+                                    <i class="bi bi-check-circle-fill text-gold me-3 mt-1"></i>
+                                    <span><strong>Expert Support</strong>: Around-the-clock dedicated systems operations monitoring.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animated statistics counters in hero -->
+                <div class="row hero-stats mt-5">
+                    <div class="col-6 col-md-3 text-start">
+                        <div class="stat-number" data-target="250">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="col-6 col-md-3 text-start">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="col-6 col-md-3 text-start mt-4 mt-md-0">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Certificates Issued</div>
+                    </div>
+                    <div class="col-6 col-md-3 text-start mt-4 mt-md-0">
+                        <div class="stat-number" data-target="25">0</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. OUR SERVICES SECTION -->
+        <section id="services" class="section-padding bg-black bg-opacity-25">
+            <div class="container text-center">
+                <div class="section-title-wrap reveal">
+                    <span class="section-subtitle">What We Do</span>
+                    <h2 class="section-title">Our Premium Services</h2>
+                    <p class="text-secondary max-width-600 mx-auto">We engineer state-of-the-art software products, support enterprise infrastructures, and create memorable brand identity packages tailored to accelerate your business growth.</p>
+                </div>
+
+                <div class="row g-4 mt-2">
+                    <!-- Service 1: Website Development -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-code-slash"></i>
+                                </div>
+                                <h3 class="service-title">Website Development</h3>
+                                <p class="service-description">Bespoke, high-performance responsive portals, CMS systems, and custom web applications optimized for lightning-fast loads.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Mobile App Development -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <h3 class="service-title">Mobile App Development</h3>
+                                <p class="service-description">Stunning hybrid and native iOS & Android applications engineered for fluid navigation and offline usability.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Software Development -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-cpu"></i>
+                                </div>
+                                <h3 class="service-title">Software Development</h3>
+                                <p class="service-description">Enterprise-grade desktop suites, customized CRM solutions, and robust APIs designed to streamline complex corporate workflows.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: UI/UX Design -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-palette"></i>
+                                </div>
+                                <h3 class="service-title">UI/UX Design</h3>
+                                <p class="service-description">Interactive wireframing, high-fidelity prototypes, and research-backed designs built to maximize conversion and user delight.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Logo Design -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-vector-pen"></i>
+                                </div>
+                                <h3 class="service-title">Logo Design</h3>
+                                <p class="service-description">Memorable, minimal, and scalable vector insignias designed to convey your company's core principles at a single glance.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Branding Solutions -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-megaphone"></i>
+                                </div>
+                                <h3 class="service-title">Branding Solutions</h3>
+                                <p class="service-description">Cohesive typography guidelines, color systems, and comprehensive brand books to position your company ahead of the market.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 7: IT Consulting -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h3 class="service-title">IT Consulting</h3>
+                                <p class="service-description">Architectural analysis, carbon audits for digital assets, database migration planning, and infrastructure cost reduction.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 8: Technical Support & Maintenance -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-tools"></i>
+                                </div>
+                                <h3 class="service-title">Tech Support & Maintenance</h3>
+                                <p class="service-description">Dedicated SLA response teams, database backups, server health optimization checks, and immediate bug remedies.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 9: Cloud Solutions -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-cloud-arrow-up"></i>
+                                </div>
+                                <h3 class="service-title">Cloud Solutions</h3>
+                                <p class="service-description">Serverless infrastructure planning, AWS/Azure setup, load balancing setups, and automated container orchestration pipelines.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 10: Digital Transformation -->
+                    <div class="col-md-12 col-lg-4 mx-lg-auto reveal">
+                        <div class="glass-card glass-card-hover service-card">
+                            <div>
+                                <div class="service-icon-wrap">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </div>
+                                <h3 class="service-title">Digital Transformation</h3>
+                                <p class="service-description">Migrating legacy operational structures into modern, cloud-native automated frameworks with integrated AI analytics dashboards.</p>
+                            </div>
+                            <a href="#contact" class="service-learn-more text-gold">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FEATURED PROJECTS SECTION -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <div class="section-title-wrap text-center reveal">
+                    <span class="section-subtitle">Our Work</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="text-secondary max-width-600 mx-auto">Explore some of our recently deployed digital solutions. Our projects are fetched dynamically to guarantee up-to-the-minute transparency.</p>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="row justify-content-center mb-2 reveal">
+                    <div class="col-md-10">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                <div class="search-project-wrap w-100">
+                                    <div class="input-group">
+                                        <span class="input-group-text text-secondary"><i class="bi bi-search"></i></span>
+                                        <input type="text" id="project-search-input" class="form-control search-project-input" placeholder="Search by project name or technology...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="filter-btn-group" id="project-filter-buttons">
+                                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                                    <button class="filter-btn" data-filter="completed">Completed</button>
+                                    <button class="filter-btn" data-filter="in progress">In Progress</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="row g-4 mt-2" id="projects-grid">
+                    <!-- Project cards loaded dynamically by script.js -->
+                    <div class="col-12 text-center py-5" id="projects-loader">
+                        <div class="spinner-border text-gold" role="status">
+                            <span class="visually-hidden">Loading Projects...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ABOUT RECYCLEZONE SECTION -->
+        <section id="about" class="section-padding bg-black bg-opacity-25">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 reveal">
+                        <div class="about-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="RecycleZone Corporate Workspace" class="about-img">
+                            <div class="about-img-border"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 reveal">
+                        <span class="section-subtitle">Who We Are</span>
+                        <h2 class="section-title mb-4">Pioneering Sustainable IT Excellence</h2>
+                        <p class="text-secondary mb-4">
+                            RecycleZone was founded with a dual vision: delivering elite, million-dollar enterprise technology solutions while drastically reducing the electronic carbon footprint of development workflows. 
+                        </p>
+                        
+                        <div class="row g-4 mb-4">
+                            <div class="col-sm-6">
+                                <div class="glass-card p-3 h-100">
+                                    <h4 class="text-gold mb-2"><i class="bi bi-rocket-takeoff-fill me-2"></i>Our Mission</h4>
+                                    <p class="text-secondary font-sm mb-0">To develop secure, elegant, and highly performant custom software interfaces while maximizing eco-friendly circular development practices.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="glass-card p-3 h-100">
+                                    <h4 class="text-gold mb-2"><i class="bi bi-eye-fill me-2"></i>Our Vision</h4>
+                                    <p class="text-secondary font-sm mb-0">To lead the international technology sector as the premier provider of enterprise sustainable IT engineering, setting gold-standard code standards.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4">
+                            <h4 class="text-gold mb-3">Why Choose RecycleZone?</h4>
+                            <div class="row">
+                                <div class="col-md-6 mb-2 text-secondary font-sm">
+                                    <i class="bi bi-circle-fill text-gold me-2" style="font-size: 0.5rem; vertical-align: middle;"></i> 24/7 Server Operations Team
+                                </div>
+                                <div class="col-md-6 mb-2 text-secondary font-sm">
+                                    <i class="bi bi-circle-fill text-gold me-2" style="font-size: 0.5rem; vertical-align: middle;"></i> 100% Clean Green Servers
+                                </div>
+                                <div class="col-md-6 mb-2 text-secondary font-sm">
+                                    <i class="bi bi-circle-fill text-gold me-2" style="font-size: 0.5rem; vertical-align: middle;"></i> Native Architecture experts
+                                </div>
+                                <div class="col-md-6 text-secondary font-sm">
+                                    <i class="bi bi-circle-fill text-gold me-2" style="font-size: 0.5rem; vertical-align: middle;"></i> Zero-waste IT lifecycle logic
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary statistics counters row -->
+                <div class="row g-4 mt-5 pt-4 text-center border-top border-secondary border-opacity-25 reveal">
+                    <div class="col-6 col-md-3">
+                        <div class="counter-box">
+                            <div class="counter-number font-weight-800 text-gold" data-target="250">0</div>
+                            <div class="counter-title">Projects Completed</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="counter-box">
+                            <div class="counter-number font-weight-800 text-gold" data-target="150">0</div>
+                            <div class="counter-title">Happy Clients</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mt-4 mt-md-0">
+                        <div class="counter-box">
+                            <div class="counter-number font-weight-800 text-gold" data-target="500">0</div>
+                            <div class="counter-title">Certificates Issued</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mt-4 mt-md-0">
+                        <div class="counter-box">
+                            <div class="counter-number font-weight-800 text-gold" data-target="25">0</div>
+                            <div class="counter-title">Team Members</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. OUR CORE VALUES SECTION -->
+        <section id="values" class="section-padding">
+            <div class="container text-center">
+                <div class="section-title-wrap reveal">
+                    <span class="section-subtitle">Our Principles</span>
+                    <h2 class="section-title">Our Core Values</h2>
+                    <p class="text-secondary max-width-600 mx-auto">These fundamental guiding forces guide every single project execution, team interaction, and business decision we make.</p>
+                </div>
+
+                <div class="row g-4 mt-2">
+                    <!-- Value 1: Innovation -->
+                    <div class="col-md-4 reveal">
+                        <div class="glass-card value-card">
+                            <div class="value-icon-wrap">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h3 class="value-title">Innovation</h3>
+                            <p class="value-desc">Pioneering clean technology pathways and solving highly complex problems with creative development architectures.</p>
+                        </div>
+                    </div>
+                    <!-- Value 2: Integrity -->
+                    <div class="col-md-4 reveal">
+                        <div class="glass-card value-card">
+                            <div class="value-icon-wrap">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3 class="value-title">Integrity</h3>
+                            <p class="value-desc">Absolute transparency in security operations, code management, billing structures, and data compliance.</p>
+                        </div>
+                    </div>
+                    <!-- Value 3: Excellence -->
+                    <div class="col-md-4 reveal">
+                        <div class="glass-card value-card">
+                            <div class="value-icon-wrap">
+                                <i class="bi bi-award"></i>
+                            </div>
+                            <h3 class="value-title">Excellence</h3>
+                            <p class="value-desc">Striving to deliver zero-bug deployments, premium responsiveness, and modern UI/UX for absolute usability.</p>
+                        </div>
+                    </div>
+                    <!-- Value 4: Sustainability -->
+                    <div class="col-md-4 reveal">
+                        <div class="glass-card value-card">
+                            <div class="value-icon-wrap">
+                                <i class="bi bi-recycle"></i>
+                            </div>
+                            <h3 class="value-title">Sustainability</h3>
+                            <p class="value-desc">Designing codebases that load fast to save compute power, and recycling development equipment hardware.</p>
+                        </div>
+                    </div>
+                    <!-- Value 5: Customer Success -->
+                    <div class="col-md-4 reveal">
+                        <div class="glass-card value-card">
+                            <div class="value-icon-wrap">
+                                <i class="bi bi-emoji-smile"></i>
+                            </div>
+                            <h3 class="value-title">Customer Success</h3>
+                            <p class="value-desc">Aligning engineering structures to resolve corporate pain-points and generate measurable digital growth indicators.</p>
+                        </div>
+                    </div>
+                    <!-- Value 6: Continuous Learning -->
+                    <div class="col-md-4 reveal">
+                        <div class="glass-card value-card">
+                            <div class="value-icon-wrap">
+                                <i class="bi bi-book"></i>
+                            </div>
+                            <h3 class="value-title">Continuous Learning</h3>
+                            <p class="value-desc">Mentoring the next generation of engineers through rigorous internship domains and continuous skills training.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. TESTIMONIALS SECTION -->
+        <section id="testimonials" class="section-padding testimonials-section">
+            <div class="container text-center">
+                <div class="section-title-wrap reveal">
+                    <span class="section-subtitle">Reviews</span>
+                    <h2 class="section-title">What Our Clients Say</h2>
+                </div>
+
+                <!-- Bootstrap Auto Slider Carousel -->
+                <div id="testimonialCarousel" class="carousel slide reveal mt-4" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    
+                    <div class="carousel-inner pb-5">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="testimonial-card glass-card">
+                                <div class="client-stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="testimonial-quote">"RecycleZone engineered our complete circular economy ERP system. Their commitment to clean, performant code combined with their responsive project coordination resulted in a massive system operational cost savings of 25%."</p>
+                                <div class="client-info">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Marcus Thompson" class="client-img">
+                                    <div>
+                                        <div class="client-name" style="color: var(--text-primary);">Marcus Thompson</div>
+                                        <div class="client-role">CTO, Circular Logistics Inc.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-card glass-card">
+                                <div class="client-stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="testimonial-quote">"The e-Cycle portal designed by RecycleZone has transformed our community recycling operations. The interface is clean, load speed is flawless, and the Supabase database synchronization operates in near-zero latency."</p>
+                                <div class="client-info">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Sophia Lin" class="client-img">
+                                    <div>
+                                        <div class="client-name" style="color: var(--text-primary);">Sophia Lin</div>
+                                        <div class="client-role">Operations Director, EcoMetro Portal</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-card glass-card">
+                                <div class="client-stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <p class="testimonial-quote">"We consulted with RecycleZone to build our cloud infrastructure. They set up serverless API structures with automated container recovery that operates securely and conforms perfectly to carbon neutrality parameters."</p>
+                                <div class="client-info">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="David Miller" class="client-img">
+                                    <div>
+                                        <div class="client-name" style="color: var(--text-primary);">David Miller</div>
+                                        <div class="client-role">Founder & Lead Engineer, CoreCloud Inc.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. GET IN TOUCH SECTION -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="section-title-wrap text-center reveal">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Partner With Us</h2>
+                    <p class="text-secondary max-width-600 mx-auto">Have a software idea or require specialized IT management? Submit your information and an engineer will connect with you within 12 business hours.</p>
+                </div>
+
+                <div class="row g-4 mt-2">
+                    <!-- Contact Information Column -->
+                    <div class="col-lg-5 reveal">
+                        <div class="glass-card contact-info-wrap">
+                            <h3 class="mb-4">Contact Details</h3>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title" style="color: var(--text-primary);">Corporate Head Office</div>
+                                    <div class="contact-info-text">104, GreenTech Arcade, Technology Parks Phase 2, Silicon City, India</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="bi bi-envelope-open-fill"></i>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title" style="color: var(--text-primary);">Email Communications</div>
+                                    <div class="contact-info-text">recyclezone2004@gmail.com<br>recyclezoneitcore@gmail.com</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title" style="color: var(--text-primary);">Call/WhatsApp Support</div>
+                                    <div class="contact-info-text">+91 98765 43210 (Client Queries)<br>+91 98765 40012 (Tech Hotline)</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item mb-0">
+                                <div class="contact-info-icon">
+                                    <i class="bi bi-clock-fill"></i>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title" style="color: var(--text-primary);">Business Hours</div>
+                                    <div class="contact-info-text">Monday - Friday: 09:00 AM - 06:00 PM IST<br>Saturday - Sunday: Server Monitoring Only</div>
+                                </div>
+                            </div>
+
+                            <!-- Social Handles -->
+                            <div class="social-links-wrap">
+                                <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="social-icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                                <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            </div>
+
+                            <!-- Embed Maps (Sleek Dark Mode styled static iframe) -->
+                           
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Column -->
+                    <div class="col-lg-7 reveal">
+                        <div class="glass-card contact-form-card">
+                            <h3 class="mb-4">Send Message</h3>
+                            <form id="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6 form-group-custom">
+                                        <input type="text" id="contact-name" class="form-control-custom" placeholder="Full Name" required>
+                                    </div>
+                                    <div class="col-md-6 form-group-custom">
+                                        <input type="email" id="contact-email" class="form-control-custom" placeholder="Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group-custom">
+                                        <input type="tel" id="contact-phone" class="form-control-custom" placeholder="Phone Number">
+                                    </div>
+                                    <div class="col-md-6 form-group-custom">
+                                        <input type="text" id="contact-company" class="form-control-custom" placeholder="Company Name">
+                                    </div>
+                                </div>
+                                <div class="form-group-custom">
+                                    <input type="text" id="contact-subject" class="form-control-custom" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group-custom">
+                                    <textarea id="contact-message" rows="5" class="form-control-custom" placeholder="Your Message Here..." required></textarea>
+                                </div>
+                                <button type="submit" id="contact-submit-btn" class="btn btn-gold w-100">Send Message <i class="bi bi-send-fill ms-2"></i></button>
+                                
+                                <div id="form-alert-container" class="mt-3"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Modal (Dynamically Rendered Context) -->
+    <div class="modal fade" id="projectDetailModal" tabindex="-1" aria-labelledby="projectDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectDetailModalLabel">Project Title</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3 mb-lg-0">
+                            <img src="" id="modal-project-img" class="img-fluid rounded border border-secondary" alt="Project snapshot">
+                        </div>
+                        <div class="col-lg-6">
+                            <span id="modal-project-status" class="project-tag mb-3">Status</span>
+                            <h4 id="modal-project-title" class="mb-3 text-gold">Title</h4>
+                            <p id="modal-project-desc" class="text-secondary">Full description will appear here...</p>
+                            
+                            <div class="mb-4">
+                                <h6 style="color: var(--text-primary);">Technologies Used:</h6>
+                                <p id="modal-project-tech" class="text-gold font-sm">Tech stacks...</p>
+                            </div>
+                            
+                            <div class="d-flex gap-3">
+                                <a href="#" id="modal-project-live-btn" target="_blank" class="btn btn-gold btn-sm"><i class="bi bi-box-arrow-up-right me-2"></i>Live Demo</a>
+                                <a href="#" id="modal-project-github-btn" target="_blank" class="btn btn-outline-gold btn-sm"><i class="bi bi-github me-2"></i>Code Repository</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Actions widgets -->
+    <a href="https://wa.me/8489481039" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll to top"><i class="bi bi-chevron-up"></i></button>
+
+    <!-- Modern Footer -->
+    <footer class="footer-wrap">
+        <div class="container">
+            <div class="row g-4 text-start">
+                <div class="col-lg-4 col-md-6">
+                    <a class="footer-brand d-flex align-items-center" href="index.html">
+                        <img src="logo.svg" alt="RecycleZone Logo" height="38" class="me-2">
+                        Recycle<span style="color: var(--text-primary);">Zone</span>
+                    </a>
+                    <p class="footer-text">Engineering premium sustainable enterprise tech interfaces. We transform operational overheads into carbon-optimized digital structures.</p>
+                    <p class="footer-text mb-0">&copy; <span id="current-year">2019</span> RecycleZone Ltd. All Rights Reserved.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="footer-heading">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">Web Portals</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">Enterprise Systems</a></li>
+                        <li><a href="#services">Branding & Logo</a></li>
+                        <li><a href="#services">IT Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#projects">Work Portfolio</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="certificate-verification.html">Verify Credentials</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-text">Subscribe to receive monthly reviews on clean computing infrastructure, custom architecture updates, and product launches.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your Email Address" required>
+                        <button type="submit" class="newsletter-btn"><i class="bi bi-chevron-right"></i></button>
+                    </form>
+                    <div id="newsletter-alert" class="mt-2 text-gold font-sm"></div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                Designed & Developed for digital excellence. Compliance standards certified.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Projects Data List -->
+    <script src="projects-data.js"></script>
+    
+    <!-- UI Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>

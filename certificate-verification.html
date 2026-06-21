@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification Portal | RecycleZone</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="Verify the authenticity of internship certificates issued by RecycleZone. Authenticate student details, college affiliations, and domains.">
+    <meta name="keywords" content="Verify Certificate, Certificate Authenticator, RecycleZone Internships, Verify Credentials">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Canvas for Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand text-gold d-flex align-items-center" href="index.html">
+                    <img src="logo.svg" alt="RecycleZone Logo" height="38" class="me-2">
+                    Recycle<span style="color: var(--text-primary);">Zone</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html#hero">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#values">Values</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="certificate-verification.html">Verification</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode">
+                                <i class="bi bi-moon-stars-fill"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-wrapper section-padding">
+        <div class="container">
+            <div class="section-title-wrap text-center mt-4 mb-5">
+                <span class="section-subtitle">Credential Security</span>
+                <h1 class="section-title">Internship Certificate Verification</h1>
+                <p class="text-secondary max-width-600 mx-auto">Verify the validity of a certificate issued by RecycleZone. Enter the unique Certificate ID or search by the student name.</p>
+            </div>
+
+            <!-- Search Console Card -->
+            <div class="glass-card certificate-search-card mb-5">
+                <h3 class="text-gold text-center mb-4"><i class="bi bi-shield-check me-2"></i>Search Credential Database</h3>
+                <form id="verification-form">
+                    <div class="mb-4">
+                        <label for="search-input" class="form-label text-secondary fw-500">Certificate ID or Student Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text text-secondary"><i class="bi bi-search"></i></span>
+                            <input type="text" id="search-input" class="form-control py-3" placeholder="e.g. RZ-2026-FSD-9821 or Shafeeq Ahamed" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <button type="submit" id="btn-verify-id" class="btn btn-gold w-100 py-3"><i class="bi bi-patch-check-fill me-2"></i>Verify ID</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" id="btn-search-name" class="btn btn-outline-gold w-100 py-3"><i class="bi bi-people-fill me-2"></i>Search Name</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Query results container -->
+            <div id="verification-results" class="d-none">
+                <!-- Will be dynamically populated by JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="footer-wrap">
+        <div class="container text-start">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="footer-brand" href="index.html">Recycle<span>Zone</span></a>
+                    <p class="footer-text">Engineering premium sustainable enterprise tech interfaces. We transform operational overheads into carbon-optimized digital structures.</p>
+                    <p class="footer-text mb-0">&copy; <span id="current-year">2026</span> RecycleZone Ltd. All Rights Reserved.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="footer-heading">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Web Portals</a></li>
+                        <li><a href="index.html#services">Mobile Apps</a></li>
+                        <li><a href="index.html#services">Enterprise Systems</a></li>
+                        <li><a href="index.html#services">Branding & Logo</a></li>
+                        <li><a href="index.html#services">IT Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#projects">Work Portfolio</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="certificate-verification.html">Verify Credentials</a></li>
+                        <li><a href="index.html#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading">Verification Note</h5>
+                    <p class="footer-text">This portal querying is connected to our secure Supabase credential core. Authorized admin logs govern data modifications. Contact support for offline queries.</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-5 pt-3 border-top border-secondary border-opacity-25">
+                Designed & Developed for digital excellence. Compliance standards certified.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <!-- jsPDF & html2canvas CDN libraries for high resolution export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Custom Certificates Data List -->
+    <script src="certificates-data.js"></script>
+
+
+    <!-- Verification Page Controller logic -->
+    <script>
+        // --- OFFLINE CERTIFICATES DATABASE SIMULATOR ---
+        window.RecycleZoneDB = {
+            getCertificateById: async (certId) => {
+                const list = window.RecycleZoneCertificates || [];
+                const targetId = String(certId).toLowerCase().trim();
+                return list.find(c => {
+                    return c && c.certificate_id && String(c.certificate_id).toLowerCase().trim() === targetId;
+                }) || null;
+            },
+            searchCertificatesByName: async (nameQuery) => {
+                const list = window.RecycleZoneCertificates || [];
+                const query = String(nameQuery).toLowerCase().trim();
+                return list.filter(c => {
+                    return c && c.student_name && String(c.student_name).toLowerCase().includes(query);
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const savedTheme = localStorage.getItem('recyclezone_theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-theme');
+                updateThemeIcon(true);
+            }
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    body.classList.toggle('light-theme');
+                    const isLight = body.classList.contains('light-theme');
+                    localStorage.setItem('recyclezone_theme', isLight ? 'light' : 'dark');
+                    updateThemeIcon(isLight);
+                    initParticles();
+                });
+            }
+            function updateThemeIcon(isLight) {
+                if (!themeToggle) return;
+                const icon = themeToggle.querySelector('i');
+                icon.className = isLight ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+            }
+
+            // Canvas Particles Background
+            const canvas = document.getElementById('particle-canvas');
+            let ctx = null;
+            let particlesArray = [];
+            if (canvas) {
+                ctx = canvas.getContext('2d');
+                window.addEventListener('resize', () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    initParticles();
+                });
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                class Particle {
+                    constructor(x, y, dx, dy, size, color) {
+                        this.x = x; this.y = y; this.dx = dx; this.dy = dy; this.size = size; this.color = color;
+                    }
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+                        ctx.fillStyle = this.color;
+                        ctx.fill();
+                    }
+                    update() {
+                        if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
+                        if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
+                        this.x += this.dx; this.y += this.dy;
+                        this.draw();
+                    }
+                }
+
+                function initParticles() {
+                    particlesArray = [];
+                    const isLight = body.classList.contains('light-theme');
+                    const pColor = isLight ? 'rgba(179, 143, 29, 0.15)' : 'rgba(212, 175, 55, 0.2)';
+                    for (let i = 0; i < 60; i++) {
+                        let size = Math.random() * 3 + 1;
+                        let x = Math.random() * canvas.width;
+                        let y = Math.random() * canvas.height;
+                        let dx = Math.random() * 0.4 - 0.2;
+                        let dy = Math.random() * 0.4 - 0.2;
+                        particlesArray.push(new Particle(x, y, dx, dy, size, pColor));
+                    }
+                }
+                function animate() {
+                    ctx.clearRect(0,0,canvas.width,canvas.height);
+                    particlesArray.forEach(p => p.update());
+                    requestAnimationFrame(animate);
+                }
+                initParticles();
+                animate();
+            }
+
+            // --- LOOKUP LOGIC ---
+            const verifyForm = document.getElementById('verification-form');
+            const searchInput = document.getElementById('search-input');
+            const resultsDiv = document.getElementById('verification-results');
+            const searchByNameBtn = document.getElementById('btn-search-name');
+
+            // Handle ID Verification Submit
+            verifyForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const certId = searchInput.value.trim();
+                if (!certId) return;
+                
+                showLoading();
+                try {
+                    const certificate = await window.RecycleZoneDB.getCertificateById(certId);
+                    if (certificate) {
+                        renderVerifiedCertificate(certificate);
+                    } else {
+                        // If it's a name search accidentally run as verify, look by name
+                        const names = await window.RecycleZoneDB.searchCertificatesByName(certId);
+                        if (names && names.length > 0) {
+                            renderSearchResults(names);
+                        } else {
+                            renderInvalidCertificate(certId);
+                        }
+                    }
+                } catch (err) {
+                    console.error("Verification error:", err);
+                    showError("An error occurred verifying credentials. Error: " + (err.message || err));
+                }
+            });
+
+            // Handle Name search button click
+            searchByNameBtn.addEventListener('click', async () => {
+                const query = searchInput.value.trim();
+                if (!query) {
+                    searchInput.focus();
+                    return;
+                }
+                
+                showLoading();
+                try {
+                    const results = await window.RecycleZoneDB.searchCertificatesByName(query);
+                    renderSearchResults(results);
+                } catch (err) {
+                    console.error("Search error:", err);
+                    showError("An error occurred searching the student database. Error: " + (err.message || err));
+                }
+            });
+
+            function showLoading() {
+                resultsDiv.className = "row justify-content-center mt-4";
+                resultsDiv.innerHTML = `
+                    <div class="col-lg-8 text-center py-5">
+                        <div class="spinner-border text-gold" role="status">
+                            <span class="visually-hidden">Loading Record...</span>
+                        </div>
+                        <p class="text-secondary mt-2">Checking database...</p>
+                    </div>
+                `;
+            }
+
+            function showError(msg) {
+                resultsDiv.innerHTML = `
+                    <div class="col-lg-8">
+                        <div class="alert alert-danger border-danger bg-opacity-10 text-danger text-center">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i> ${msg}
+                        </div>
+                    </div>
+                `;
+            }
+
+            function renderInvalidCertificate(certId) {
+                resultsDiv.innerHTML = `
+                    <div class="col-lg-8">
+                        <div class="glass-card verification-status-box status-invalid mb-4">
+                            <i class="bi bi-patch-exclamation-fill me-2" style="font-size: 1.5rem; vertical-align: middle;"></i> 
+                            ✗ INVALID CERTIFICATE
+                        </div>
+                        <div class="glass-card p-4 text-center">
+                            <p class="text-secondary">No active credential was found under the ID: <strong style="color: var(--text-primary);">${certId}</strong>.</p>
+                            <p class="text-secondary font-sm mb-0">Please verify capitalization, spelling, and dash alignment. Contact RecycleZone Admin for credential correction.</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function renderVerifiedCertificate(cert) {
+                resultsDiv.innerHTML = `
+                    <div class="col-lg-10">
+                        <!-- 1. Verification Status Alert -->
+                        <div class="glass-card verification-status-box status-verified mb-4">
+                            <i class="bi bi-patch-check-fill me-2" style="font-size: 1.5rem; vertical-align: middle;"></i> 
+                            ✓ VERIFIED CERTIFICATE
+                        </div>
+                        
+                        <!-- 2. Detailed Info Block -->
+                        <div class="glass-card p-4 mb-4">
+                            <h3 class="text-gold mb-4 border-bottom border-secondary border-opacity-25 pb-3">Certificate Specifications</h3>
+                            <div class="row g-4 text-start">
+                                <div class="col-md-8">
+                                    <div class="info-grid">
+                                        <div class="mb-3">
+                                            <div class="info-item-label">Student Name</div>
+                                            <div class="info-item-value" style="color: var(--text-primary);">${cert.student_name}</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="info-item-label">Certificate ID</div>
+                                            <div class="info-item-value text-gold fw-bold">${cert.certificate_id}</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="info-item-label">College/University</div>
+                                            <div class="info-item-value">${cert.college_name}</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="info-item-label">Internship Domain</div>
+                                            <div class="info-item-value">${cert.internship_domain}</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="info-item-label">Duration Period</div>
+                                            <div class="info-item-value">${formatDate(cert.start_date)} to ${formatDate(cert.end_date)}</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="info-item-label">Official Issue Date</div>
+                                            <div class="info-item-value">${formatDate(cert.issue_date)}</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="info-item-label">Print Dimensions</div>
+                                            <div class="info-item-value">A4 Landscape (297mm x 210mm)</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-3 border-top border-secondary border-opacity-10 text-success fw-500">
+                                        <i class="bi bi-shield-fill-check me-2"></i> This certificate is authenticated as an official credential issued by RecycleZone.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center d-flex flex-column align-items-center justify-content-center border-start border-secondary border-opacity-25">
+                                    <button type="button" id="btn-download-pdf" class="btn btn-gold w-100 py-3 mb-3"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Download PDF</button>
+                                    <span class="text-muted font-sm">DPI Print Resolution: 1200</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Professional Visual Preview -->
+                        <h4 class="text-gold mb-3 text-start"><i class="bi bi-eye-fill me-2"></i>Official Certificate Preview</h4>
+                        <div class="certificate-preview-container mb-4 text-center">
+                           
+                            <div id="certificate-print-area" class="certificate-paper text-start" style="position: relative;">
+                                <!-- Central Watermark Logo (Very subtle opacity) -->
+                                  <div class="cert-watermark">
+                                    <img src="logo.png" style="width: 100%; height: 100%;" alt="Watermark">
+                                </div>
+                                <!-- Main Geometric Background SVG -->
+                                <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;" viewBox="0 0 850 600" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Outer Navy Border shifted inward for space -->
+                                    <rect x="22" y="22" width="806" height="556" fill="none" stroke="#0f1d2d" stroke-width="12" />
+                                </svg>
+                                 <!-- Ornate Gold Corner Flourishes -->
+                                 <!-- Top-Left -->
+                                 <div style="position: absolute; top: 28px; left: 28px; width: 85px; height: 85px; z-index: 2; pointer-events: none; color: #b88f3d;">
+                                     <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                         <path d="M 5,5 C 35,5 55,15 65,35 C 55,25 35,25 20,40 C 30,30 50,25 60,10 C 45,18 25,18 5,5 Z M 5,5 C 5,35 15,55 35,65 C 25,55 25,35 40,20 C 30,30 25,50 10,60 C 18,45 18,25 5,5 Z" fill="currentColor" />
+                                         <path d="M 5,45 Q 5,85 40,85 Q 55,85 55,70 Q 55,55 40,55 Q 30,55 30,65 Q 30,72 38,72 Q 44,72 44,65" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <path d="M 45,5 Q 85,5 85,40 Q 85,55 70,55 Q 55,55 55,40 Q 55,30 65,30 Q 72,30 72,38 Q 72,44 65,44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <circle cx="12" cy="12" r="3" fill="currentColor" />
+                                         <circle cx="20" cy="20" r="2" fill="currentColor" />
+                                     </svg>
+                                 </div>
+                                 <!-- Top-Right -->
+                                 <div style="position: absolute; top: 28px; right: 28px; width: 85px; height: 85px; z-index: 2; pointer-events: none; color: #b88f3d; transform: scaleX(-1);">
+                                     <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                         <path d="M 5,5 C 35,5 55,15 65,35 C 55,25 35,25 20,40 C 30,30 50,25 60,10 C 45,18 25,18 5,5 Z M 5,5 C 5,35 15,55 35,65 C 25,55 25,35 40,20 C 30,30 25,50 10,60 C 18,45 18,25 5,5 Z" fill="currentColor" />
+                                         <path d="M 5,45 Q 5,85 40,85 Q 55,85 55,70 Q 55,55 40,55 Q 30,55 30,65 Q 30,72 38,72 Q 44,72 44,65" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <path d="M 45,5 Q 85,5 85,40 Q 85,55 70,55 Q 55,55 55,40 Q 55,30 65,30 Q 72,30 72,38 Q 72,44 65,44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <circle cx="12" cy="12" r="3" fill="currentColor" />
+                                         <circle cx="20" cy="20" r="2" fill="currentColor" />
+                                     </svg>
+                                 </div>
+                                 <!-- Bottom-Left -->
+                                 <div style="position: absolute; bottom: 28px; left: 28px; width: 85px; height: 85px; z-index: 2; pointer-events: none; color: #b88f3d; transform: scaleY(-1);">
+                                     <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                         <path d="M 5,5 C 35,5 55,15 65,35 C 55,25 35,25 20,40 C 30,30 50,25 60,10 C 45,18 25,18 5,5 Z M 5,5 C 5,35 15,55 35,65 C 25,55 25,35 40,20 C 30,30 25,50 10,60 C 18,45 18,25 5,5 Z" fill="currentColor" />
+                                         <path d="M 5,45 Q 5,85 40,85 Q 55,85 55,70 Q 55,55 40,55 Q 30,55 30,65 Q 30,72 38,72 Q 44,72 44,65" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <path d="M 45,5 Q 85,5 85,40 Q 85,55 70,55 Q 55,55 55,40 Q 55,30 65,30 Q 72,30 72,38 Q 72,44 65,44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <circle cx="12" cy="12" r="3" fill="currentColor" />
+                                         <circle cx="20" cy="20" r="2" fill="currentColor" />
+                                     </svg>
+                                 </div>
+                                 <!-- Bottom-Right -->
+                                 <div style="position: absolute; bottom: 28px; right: 28px; width: 85px; height: 85px; z-index: 2; pointer-events: none; color: #b88f3d; transform: scale(-1);">
+                                     <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                         <path d="M 5,5 C 35,5 55,15 65,35 C 55,25 35,25 20,40 C 30,30 50,25 60,10 C 45,18 25,18 5,5 Z M 5,5 C 5,35 15,55 35,65 C 25,55 25,35 40,20 C 30,30 25,50 10,60 C 18,45 18,25 5,5 Z" fill="currentColor" />
+                                         <path d="M 5,45 Q 5,85 40,85 Q 55,85 55,70 Q 55,55 40,55 Q 30,55 30,65 Q 30,72 38,72 Q 44,72 44,65" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <path d="M 45,5 Q 85,5 85,40 Q 85,55 70,55 Q 55,55 55,40 Q 55,30 65,30 Q 72,30 72,38 Q 72,44 65,44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                         <circle cx="12" cy="12" r="3" fill="currentColor" />
+                                         <circle cx="20" cy="20" r="2" fill="currentColor" />
+                                     </svg>
+                                 </div>
+
+                                 <!-- Top-Left Branding Header -->
+                                 <div style="position: absolute; top: 38px; left: 125px; z-index: 5; display: flex; align-items: center; gap: 10px;">
+                                     <img src="logo.svg" width="75px" height="75px" alt="RecycleZone Logo">
+                                     <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1px; ">
+                                         <div style="font-size: 1.05rem; color: #0f1d2d; font-weight: 800; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; line-height: 1.2;">Recycle<span style="color:#b88f3d;">Zone</span></div>
+                                         <div style="font-family: 'Montserrat', sans-serif; font-size: 0.52rem; font-weight: 700; color: #8c7c6a; letter-spacing: 0.5px; text-transform: uppercase; line-height: 1.1;">Rebuild. Reinvent. Recycle Tech.</div>
+                                     </div>
+                                 </div>    
+
+                                <div class="cert-outer-border">
+                                    <!-- Title Block -->
+                                    <div class="cert-title-area text-center" style="margin-bottom: 15px; margin-top: 40px; width: 100%;">
+                                        <h2 class="cert-main-title" style="margin-bottom: 0; font-family: 'Playfair Display', 'Georgia', serif; font-weight: 700; font-size: 2.8rem; color: #0f1d2d !important; letter-spacing: 5px;">Certificate</h2>
+                                        <h5 class="cert-subtitle" style="margin-top: 2px; margin-bottom: 4px;">Of Appreciation</h5>
+                                        <div style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 600; color: #8c7c6a; letter-spacing: 2.2px; text-transform: uppercase; margin-top: 20px; margin-bottom: 5px;">This Certificate is Proudly Presented to</div>
+                                    </div>
+
+                                    <!-- Student Name Serif & Underline Divider -->
+                                    <div style="width: 100%; margin-bottom: 15px; margin-top: 8px; display: flex; flex-direction: column; align-items: center;">
+                                        <h1 class="cert-recipient-name" style="margin: 0; font-family: 'Playfair Display', 'Georgia', serif; font-size: 2.5rem; color: #222222 !important; text-align: center;">
+                                            ${cert.student_name}
+                                        </h1>
+                                        <!-- Gold dot divider line -->
+                                        <div style="width: 320px; height: 1.5px; background: linear-gradient(90deg, transparent 0%, #b88f3d 50%, transparent 100%); margin: 8px 0 0 0; position: relative;">
+                                            <div style="position: absolute; top: -3px; left: 50%; transform: translateX(-50%); width: 7px; height: 7px; border-radius: 50%; background: #b88f3d; border: 1.5px solid #faf8f4; box-shadow: 0 0 4px rgba(184,143,61,0.4);"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Body text content -->
+                                    <div style="width: 100%; margin-bottom: 40px; display: flex; justify-content: center;">
+                                        <div class="cert-body-text" style="text-align: center !important; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.8; color: #555555 !important; max-width: 82% !important; margin: 0 auto;">
+                                            Studying at <span class="cert-highlight">${cert.college_name}</span>, has successfully completed a practical internship program in the domain of <span class="cert-highlight" style="border-bottom: 1.5px solid #b88f3d;">${cert.internship_domain}</span> under the guidance of RecycleZone. The student displayed exemplary technical dedication, hardware-software logic integration, and overall operational excellence during the program from <span class="cert-highlight">${formatDate(cert.start_date)}</span> to <span class="cert-highlight">${formatDate(cert.end_date)}</span>.
+                                        </div>
+                                    </div>
+
+                                     <!-- Footer Block -->
+                                     <div class="cert-footer-area" style="width: 100%; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px; padding: 0 35px;">
+                                         <!-- Column 1: Date -->
+                                         <div style="text-align: center; width: 190px; display: flex; flex-direction: column; align-items: center;">
+                                             <div style="height: 40px; display: flex; align-items: center; justify-content: center;">
+                                                 <span style="font-family: 'Roboto', sans-serif; font-size: 0.82rem; color: #4a361c; font-weight: 600;">${formatDate(cert.issue_date)}</span>
+                                             </div>
+                                             <div style="border-top: 1.5px solid #b88f3d; width: 110px; padding-top: 5px; font-family: 'Roboto', sans-serif; font-size: 0.65rem; color: #8c7c6a; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Date</div>
+                                         </div>
+
+                                         <!-- Center: Official Stamp -->
+                                         <div style="width: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; bottom: -5px;">
+                                             <img src="stamp.png" style="width: 90px; height: 90px; object-fit: contain;" alt="Official Stamp">
+                                         </div>
+
+                                         <!-- Column 2: Manager Signature -->
+                                         <div style="text-align: center; width: 190px; display: flex; flex-direction: column; align-items: center;">
+                                             <img src="project_manager_sig.png" style="width: 150px; height: 55px; object-fit: contain; margin-bottom: 2px;" alt="Project Manager Signature">
+                                             <div style="border-top: 1.5px solid #b88f3d; width: 110px; padding-top: 5px; font-family: 'Roboto', sans-serif; font-size: 0.65rem; color: #8c7c6a; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Manager</div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 
+                                 <!-- Bottom Verification Link -->
+                                 <div style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); font-family: 'Roboto', sans-serif; font-size: 0.6rem; color: #8c7c6a; letter-spacing: 0.5px; z-index: 5; white-space: nowrap;">
+                                     Verify authenticity at <span style="color: #b88f3d;">recyclezone.in/verify</span> using ID: <span style="color: #4a361c; font-weight: 700;">${cert.certificate_id}</span>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Bind PDF download trigger
+                const downloadBtn = document.getElementById('btn-download-pdf');
+                if (downloadBtn) {
+                    downloadBtn.addEventListener('click', () => {
+                        generatePDFCertificate(cert.student_name);
+                    });
+                }
+            }
+
+            function generatePDFCertificate(studentName) {
+                const element = document.getElementById('certificate-print-area');
+                if (!element) return;
+
+                const btn = document.getElementById('btn-download-pdf');
+                const originalText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span> Downloading...`;
+
+                const opt = {
+                    scale: 6, // 6x rendering scale for ultra-high-definition prints
+                    useCORS: true,
+                    allowTaint: true,
+                    logging: false
+                };
+
+                html2canvas(element, opt).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF({
+                        orientation: 'landscape',
+                        unit: 'mm',
+                        format: 'a4'
+                    });
+
+                    pdf.addImage(imgData, 'PNG', 0, 0, 297, 210);
+                    pdf.save(`RecycleZone_${studentName.replace(/\s+/g, '_')}_Certificate.pdf`);
+                    
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                }).catch(err => {
+                    console.error("PDF generation error:", err);
+                    alert("Failed to render PDF certificate. Please check system resources.");
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                });
+            }
+
+            function renderSearchResults(results) {
+                if (!results || results.length === 0) {
+                    resultsDiv.innerHTML = `
+                        <div class="col-lg-8">
+                            <div class="glass-card p-4 text-center text-secondary">
+                                <i class="bi bi-people-fill" style="font-size: 2rem;"></i>
+                                <p class="mt-2 mb-0">No internship records match the searched name.</p>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                let listHtml = "";
+                results.forEach(cert => {
+                    listHtml += `
+                        <div class="list-group-item bg-black bg-opacity-5 border-secondary border-opacity-25 p-3 mb-2 d-flex justify-content-between align-items-center rounded">
+                            <div>
+                                <h5 class="mb-1" style="color: var(--text-primary);">${cert.student_name}</h5>
+                                <p class="text-secondary font-sm mb-0">${cert.internship_domain} | ${cert.college_name}</p>
+                                <span class="text-gold font-sm fw-bold">${cert.certificate_id}</span>
+                            </div>
+                            <button class="btn btn-gold btn-sm btn-select-cert" data-cert-id="${cert.certificate_id}">Select</button>
+                        </div>
+                    `;
+                });
+
+                resultsDiv.innerHTML = `
+                    <div class="col-lg-8">
+                        <div class="glass-card p-4">
+                            <h3 class="text-gold mb-3"><i class="bi bi-people-fill me-2"></i>Database Search Results (${results.length})</h3>
+                            <div class="list-group">
+                                ${listHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Attach event listener to select buttons
+                document.querySelectorAll('.btn-select-cert').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-cert-id');
+                        searchInput.value = id;
+                        verifyForm.dispatchEvent(new Event('submit'));
+                    });
+                });
+            }
+
+            function formatDate(dateStr) {
+                if (!dateStr) return "-";
+                const d = new Date(dateStr);
+                return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            }
+
+            // --- QR CODE URL PARAM CHECK ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const certIdParam = urlParams.get('certId');
+            if (certIdParam) {
+                searchInput.value = certIdParam;
+                // Trigger form search
+                verifyForm.dispatchEvent(new Event('submit'));
+            }
+        });
+    </script>
+</body>
+</html>
