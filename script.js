@@ -484,24 +484,26 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending...`;
             
-            const contactData = {
-                name: document.getElementById('contact-name').value,
-                email: document.getElementById('contact-email').value,
-                phone: document.getElementById('contact-phone').value || "",
-                company: document.getElementById('contact-company').value || "",
-                subject: document.getElementById('contact-subject').value,
-                message: document.getElementById('contact-message').value
-            };
+            const formData = new FormData(contactForm);
 
             try {
-                // Submit to Supabase/Mock layer
-                await window.RecycleZoneDB.submitContact(contactData);
+                // Submit to Web3Forms API
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
                 
-                showAlert(formAlertContainer, 'success', 'Success! Your message has been received. Our team will contact you shortly.');
-                contactForm.reset();
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert(formAlertContainer, 'success', 'Success! Your message has been received. Our team will contact you shortly.');
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.message || 'Failed to submit form.');
+                }
             } catch (error) {
                 console.error("Form submit error:", error);
-                showAlert(formAlertContainer, 'danger', 'Oops! Failed to submit message. Please try again later or check database connection.');
+                showAlert(formAlertContainer, 'danger', 'Oops! Failed to submit message. Please try again later or check your network connection.');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
