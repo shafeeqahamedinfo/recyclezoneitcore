@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test Canvas Render</title>
+    <!-- Same fonts and libraries as certificate-verification.html -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="certificates-data.js"></script>
+</head>
+<body style="background: #111; color: #fff; padding: 20px;">
+    <h2>Render Test Result:</h2>
+    <div id="status" style="font-size: 18px; color: #ffeb3b; margin-bottom: 20px;">Testing...</div>
+    <div id="container"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', async () => {
+            const statusEl = document.getElementById('status');
+            try {
+                // Fetch certificate-verification.html and get the template
+                const resp = await fetch('certificate-verification.html');
+                const text = await resp.text();
+                
+                // Extract the template
+                const startMarker = '<div id="certificate-print-area"';
+                const endMarker = '</div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                `;';
+                
+                let s = text.substring(text.indexOf(startMarker));
+                s = s.substring(0, s.indexOf('`;'));
+                
+                // Replace variables
+                const cert = window.CERTIFICATES_DATABASE ? window.CERTIFICATES_DATABASE[0] : {
+                    student_name: "SHAFEEQAHAMED M",
+                    certificate_id: "RZ-2026-9821",
+                    internship_domain: "Full-Stack Web Development",
+                    duration_period: "June 1, 2026 to June 30, 2026",
+                    issue_date: "July 1, 2026",
+                    verification_hash: "0x8F92A1B7C4E3D5F6",
+                    college: "Annamalai University"
+                };
+
+                s = s.replace(/\${cert\.student_name}/g, cert.student_name);
+                s = s.replace(/\${cert\.certificate_id}/g, cert.certificate_id);
+                s = s.replace(/\${cert\.internship_domain}/g, cert.internship_domain);
+                s = s.replace(/\${cert\.duration_period}/g, cert.duration_period);
+                s = s.replace(/\${cert\.issue_date}/g, cert.issue_date);
+                s = s.replace(/\${cert\.verification_hash}/g, cert.verification_hash);
+                s = s.replace(/\${cert\.college}/g, cert.college);
+
+                document.getElementById('container').innerHTML = s;
+                statusEl.innerText = "DOM inserted. Calling html2canvas...";
+
+                const element = document.getElementById('certificate-print-area');
+                
+                const opt = {
+                    scale: 3,
+                    useCORS: true,
+                    allowTaint: false,
+                    logging: true
+                };
+
+                const canvas = await html2canvas(element, opt);
+                statusEl.innerText = "Canvas rendered! Testing canvas.toDataURL()...";
+                
+                const imgData = canvas.toDataURL('image/png');
+                statusEl.innerHTML = `<span style="color:#4caf50; font-weight:bold;">SUCCESS! PDF Data URL generated successfully! Length: ${imgData.length}</span>`;
+                
+                // Also test jsPDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'landscape',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+                pdf.addImage(imgData, 'PNG', 0, 0, 297, 210);
+                statusEl.innerHTML += `<br><span style="color:#4caf50;">jsPDF successfully created PDF document!</span>`;
+
+            } catch (err) {
+                console.error("Test failed:", err);
+                statusEl.innerHTML = `<span style="color:#f44336; font-weight:bold;">FAILED: ${err.name} - ${err.message}</span><br><pre>${err.stack}</pre>`;
+            }
+        });
+    </script>
+</body>
+</html>

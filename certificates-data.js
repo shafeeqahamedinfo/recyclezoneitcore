@@ -19,8 +19,8 @@
 window.RecycleZoneCertificates = [
     {
         "certificate_id": "RZ-2026-FSD-9821",
-        "student_name": "Shafeeq Ahamed",
-       "college_name": "Annamalai University",
+        "student_name": "SHAFEEQAHAMED M",
+        "college_name": "Annamalai University",
         "internship_domain": "Full-Stack Web Development",
         "start_date": "2026-06-01",
         "end_date": "2026-06-30",
@@ -49,7 +49,7 @@ window.RecycleZoneCertificates = [
         "issue_date": "2026-07-01",
         "verification_status": "Verified"
     },
-     {
+    {
         "certificate_id": "RZ-2026-FSD-2109",
         "student_name": "DHANUSHKA BEULAH M",
         "college_name": "Annamalai University",
@@ -59,7 +59,7 @@ window.RecycleZoneCertificates = [
         "issue_date": "2026-07-01",
         "verification_status": "Verified"
     },
-     {
+    {
         "certificate_id": "RZ-2026-FSD-2114",
         "student_name": "KATHYAYINI M",
         "college_name": "Annamalai University",
@@ -69,7 +69,7 @@ window.RecycleZoneCertificates = [
         "issue_date": "2026-07-01",
         "verification_status": "Verified"
     },
-     {
+    {
         "certificate_id": "RZ-2026-FSD-2118",
         "student_name": "SANTHIYA R",
         "college_name": "Annamalai University",
